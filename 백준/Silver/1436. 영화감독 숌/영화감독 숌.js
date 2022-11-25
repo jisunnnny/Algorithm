@@ -1,10 +1,14 @@
-const N = +require("fs").readFileSync("/dev/stdin").toString()
-let num = 666;
-let count = 1;
+const N = +require("fs").readFileSync("/dev/stdin").toString();
 
-while (count !== N) {
+function solution(N) {
+  let num = 666;
+  let count = 1;
+
+  while (count !== N) {
     num++;
     if (String(num).includes("666")) count++;
+  }
+  return num;
 }
 
-console.log(num);
+console.log(solution(N));

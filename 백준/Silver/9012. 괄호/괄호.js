@@ -8,7 +8,7 @@ function solution(input) {
     let brackets = input[i + 1]
       
     while (brackets.includes("()")) {
-         brackets = brackets.replace("()", "");
+         brackets = brackets.replace(/\(\)/g, "");
     }
   
 

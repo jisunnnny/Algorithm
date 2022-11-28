@@ -2,30 +2,24 @@ const input = require("fs").readFileSync("/dev/stdin").toString().trim().split("
 
 function solution(input) {
   const length = input[0];
-  const brackets = input.slice(1);
   const resultArr = [];
 
   for (let i = 0; i < length; i++) {
-    const stack = [];
-
-    for (let j = 0; j < brackets[i].length; j++) {
-      if (brackets[i][j] === "(") {
-        stack.push(brackets[i][j]);
-      } else {
-        if (stack[stack.length - 1] === "(") {
-          stack.pop();
-        } else {stack.push(")")};
-      }
+    let brackets = input[i + 1]
+      
+    while (brackets.includes("()")) {
+         brackets = brackets.replace("()", "");
     }
+  
 
-    if (stack.length !== 0) {
-      resultArr.push("NO");
-    } else {
+    if (brackets.length === 0) {
       resultArr.push("YES");
+    } else {
+      resultArr.push("NO");
     }
   }
 
   return resultArr;
 }
 
-console.log(solution(input).join("\n"))
+console.log(solution(input).join("\n"));

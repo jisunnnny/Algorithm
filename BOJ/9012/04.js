@@ -3,7 +3,7 @@ const input = ["6", "(())())", "(((()())()", "(()())((()))", "((()()(()))(((()))
 
 // const input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n");
 
-// 정규식 이용한 풀이
+// 정규식으로 풀기
 function solution(input) {
   const length = input[0];
   const resultArr = [];

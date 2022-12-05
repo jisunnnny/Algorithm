@@ -1,7 +1,7 @@
 const input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n");
 
-let [N, ...paper] = input;
-paper = paper.map((el) => el.split(" ").map(Number));
+const N = Number(input[0]);
+const paper = input.slice(1).map((v) => v.split(" ").map(Number));
 
 let results = [];
 let white = 0;
@@ -31,7 +31,5 @@ function solution(N, x, y) {
 
 solution(N, 0, 0);
 
-results.push(white);
-results.push(blue);
-
-console.log(results.join("\n"));
+console.log(`${white}
+${blue}`);

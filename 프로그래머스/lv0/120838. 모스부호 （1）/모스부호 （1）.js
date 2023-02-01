@@ -9,5 +9,5 @@ function solution(letter) {
     
     
     
-    return letter.split(" ").map((v) => morse[v]).join("");;
+    return letter.split(' ').reduce((acc, cur) => acc + morse[cur] ,'')
 }
